@@ -1,0 +1,19 @@
+{
+    "events": [
+      {
+        "speaker": "John Doe",
+        "description": "Introduction to Flutter Development",
+        "time": "2023-10-01T10:00:00Z"
+      },
+      {
+        "speaker": "Jane Smith",
+        "description": "Advanced State Management in Flutter",
+        "time": "2023-10-01T11:30:00Z"
+      },
+      {
+        "speaker": "Alice Johnson",
+        "description": "Building Responsive UIs with Flutter",
+        "time": "2023-10-01T13:00:00Z"
+      }
+    ]
+  }
