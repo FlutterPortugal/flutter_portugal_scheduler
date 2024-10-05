@@ -1,19 +1,34 @@
 {
     "events": [
       {
-        "speaker": "John Doe",
-        "description": "Introduction to Flutter Development",
-        "time": "2023-10-01T10:00:00Z"
+        "speaker": "Filipe Barroso",
+        "title": "O que é Flutter?",
+        "description": "Nesta apresentação vai ser uma introdução ao Flutter e como ele funciona",
+        "time": "2024-10-12T10:00:00Z"
       },
       {
-        "speaker": "Jane Smith",
-        "description": "Advanced State Management in Flutter",
-        "time": "2023-10-01T11:30:00Z"
+        "speaker": "???",
+        "title": "TBA",
+        "description": "Por anunciar",
+        "time": "2024-10-12T11:00:00Z"
+      } ,
+      {
+        "speaker": "",
+        "title": "Almoço",
+        "description": "Pausa para o almoço",
+        "time": "2024-10-12T12:00:00Z"
       },
       {
-        "speaker": "Alice Johnson",
-        "description": "Building Responsive UIs with Flutter",
-        "time": "2023-10-01T13:00:00Z"
+        "speaker": "Flutter Portugal",
+        "title": "Oficina de Flutter",
+        "description": "Será-te dado instruções como desenvolver uma aplicação com Flutter, com o apoio de um mentor.",
+        "time": "2024-10-12T13:00:00Z"
+      },
+      {
+        "speaker": "Flutter Portugal",
+        "title": "Contribuições Fogos V2",
+        "description": "Já estás mais confiante com o Flutter? Então que tal contribuir para o Fogos V2?",
+        "time": "2024-10-12T13:00:00Z"
       }
     ]
   }

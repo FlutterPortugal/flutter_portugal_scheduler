@@ -125,6 +125,8 @@ class EventMapper extends ClassMapperBase<Event> {
   static String _$description(Event v) => v.description;
   static const Field<Event, String> _f$description =
       Field('description', _$description);
+  static String _$title(Event v) => v.title;
+  static const Field<Event, String> _f$title = Field('title', _$title);
   static DateTime _$time(Event v) => v.time;
   static const Field<Event, DateTime> _f$time = Field('time', _$time);
 
@@ -132,6 +134,7 @@ class EventMapper extends ClassMapperBase<Event> {
   final MappableFields<Event> fields = const {
     #speaker: _f$speaker,
     #description: _f$description,
+    #title: _f$title,
     #time: _f$time,
   };
 
@@ -139,6 +142,7 @@ class EventMapper extends ClassMapperBase<Event> {
     return Event(
         speaker: data.dec(_f$speaker),
         description: data.dec(_f$description),
+        title: data.dec(_f$title),
         time: data.dec(_f$time));
   }
 
@@ -188,7 +192,8 @@ extension EventValueCopy<$R, $Out> on ObjectCopyWith<$R, Event, $Out> {
 
 abstract class EventCopyWith<$R, $In extends Event, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? speaker, String? description, DateTime? time});
+  $R call(
+      {String? speaker, String? description, String? title, DateTime? time});
   EventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -199,16 +204,22 @@ class _EventCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Event, $Out>
   @override
   late final ClassMapperBase<Event> $mapper = EventMapper.ensureInitialized();
   @override
-  $R call({String? speaker, String? description, DateTime? time}) =>
+  $R call(
+          {String? speaker,
+          String? description,
+          String? title,
+          DateTime? time}) =>
       $apply(FieldCopyWithData({
         if (speaker != null) #speaker: speaker,
         if (description != null) #description: description,
+        if (title != null) #title: title,
         if (time != null) #time: time
       }));
   @override
   Event $make(CopyWithData data) => Event(
       speaker: data.get(#speaker, or: $value.speaker),
       description: data.get(#description, or: $value.description),
+      title: data.get(#title, or: $value.title),
       time: data.get(#time, or: $value.time));
 
   @override

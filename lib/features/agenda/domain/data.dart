@@ -19,11 +19,13 @@ class Events with EventsMappable {
 class Event with EventMappable {
   final String speaker;
   final String description;
+  final String title;
   final DateTime time;
 
   Event({
     required this.speaker,
     required this.description,
+    required this.title,
     required this.time,
   });
 }
