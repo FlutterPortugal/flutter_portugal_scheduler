@@ -1,5 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
-import 'package:flutter_portugal_scheduler/data.dart';
+import 'package:flutter_portugal_scheduler/features/agenda/domain/data.dart';
 
 part 'agenda_controller_state.mapper.dart';
 
