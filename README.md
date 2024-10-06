@@ -14,3 +14,22 @@ To get started with this project, follow these steps:
 Note: Running `flutter create .` will overwrite any existing files in the project directory. Make sure to commit any changes you've made to the project before running this command.
 
 By following these steps, you'll be able to get started with the project and begin exploring the world of Flutter development.
+
+
+## Deployment Instructions
+
+To deploy the Flutter web application, follow these steps:
+
+1. Build the web application in release mode by running the following command in your terminal:
+   ```bash
+   flutter build web --release
+   ```
+
+2. Once the build is complete, deploy the application to Firebase by executing:
+   ```bash
+   firebase deploy
+   ```
+
+   Note: Ensure that you are already logged in to Firebase before running this command.
+
+
