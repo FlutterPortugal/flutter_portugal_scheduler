@@ -3,15 +3,15 @@ import 'package:flutter_portugal_scheduler/features/agenda/application/agenda_co
 import 'package:flutter_portugal_scheduler/features/agenda/data/events_repository.dart';
 
 class AgendaControllerCubit extends Cubit<AgendaControllerState> {
-  final EventsRepository _eventsRepository;
+  final AgendaRepository _eventsRepository;
 
   AgendaControllerCubit({
-    required EventsRepository eventsRepository,
+    required AgendaRepository eventsRepository,
   })  : _eventsRepository = eventsRepository,
-        super(AgendaControllerState(events: null));
+        super(AgendaControllerState(agenda: null));
 
   Future<void> loadEvents() async {
-    final events = await _eventsRepository.loadEvents();
-    emit(state.copyWith(events: events));
+    final events = await _eventsRepository.loadAgenda();
+    emit(state.copyWith(agenda: events));
   }
 }

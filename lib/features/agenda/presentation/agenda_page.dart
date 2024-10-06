@@ -8,7 +8,10 @@ class AgendaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Portugal Agenda'),
+        title: Text(
+          'Flutter Portugal Agenda',
+          style: Theme.of(context).textTheme.displayLarge,
+        ),
       ),
       body: const AgendaListView(),
     );

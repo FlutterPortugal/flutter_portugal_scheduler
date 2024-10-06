@@ -14,7 +14,6 @@ class AgendaControllerStateMapper
   static AgendaControllerStateMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AgendaControllerStateMapper._());
-      EventsMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -22,17 +21,17 @@ class AgendaControllerStateMapper
   @override
   final String id = 'AgendaControllerState';
 
-  static Events? _$events(AgendaControllerState v) => v.events;
-  static const Field<AgendaControllerState, Events> _f$events =
-      Field('events', _$events);
+  static List<AgendaBaseValue>? _$agenda(AgendaControllerState v) => v.agenda;
+  static const Field<AgendaControllerState, List<AgendaBaseValue>> _f$agenda =
+      Field('agenda', _$agenda);
 
   @override
   final MappableFields<AgendaControllerState> fields = const {
-    #events: _f$events,
+    #agenda: _f$agenda,
   };
 
   static AgendaControllerState _instantiate(DecodingData data) {
-    return AgendaControllerState(events: data.dec(_f$events));
+    return AgendaControllerState(agenda: data.dec(_f$agenda));
   }
 
   @override
@@ -92,8 +91,9 @@ abstract class AgendaControllerStateCopyWith<
     $R,
     $In extends AgendaControllerState,
     $Out> implements ClassCopyWith<$R, $In, $Out> {
-  EventsCopyWith<$R, Events, Events>? get events;
-  $R call({Events? events});
+  ListCopyWith<$R, AgendaBaseValue,
+      ObjectCopyWith<$R, AgendaBaseValue, AgendaBaseValue>>? get agenda;
+  $R call({List<AgendaBaseValue>? agenda});
   AgendaControllerStateCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
       Then<$Out2, $R2> t);
 }
@@ -107,14 +107,18 @@ class _AgendaControllerStateCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AgendaControllerState> $mapper =
       AgendaControllerStateMapper.ensureInitialized();
   @override
-  EventsCopyWith<$R, Events, Events>? get events =>
-      $value.events?.copyWith.$chain((v) => call(events: v));
+  ListCopyWith<$R, AgendaBaseValue,
+          ObjectCopyWith<$R, AgendaBaseValue, AgendaBaseValue>>?
+      get agenda => $value.agenda != null
+          ? ListCopyWith($value.agenda!,
+              (v, t) => ObjectCopyWith(v, $identity, t), (v) => call(agenda: v))
+          : null;
   @override
-  $R call({Object? events = $none}) =>
-      $apply(FieldCopyWithData({if (events != $none) #events: events}));
+  $R call({Object? agenda = $none}) =>
+      $apply(FieldCopyWithData({if (agenda != $none) #agenda: agenda}));
   @override
   AgendaControllerState $make(CopyWithData data) =>
-      AgendaControllerState(events: data.get(#events, or: $value.events));
+      AgendaControllerState(agenda: data.get(#agenda, or: $value.agenda));
 
   @override
   AgendaControllerStateCopyWith<$R2, AgendaControllerState, $Out2>

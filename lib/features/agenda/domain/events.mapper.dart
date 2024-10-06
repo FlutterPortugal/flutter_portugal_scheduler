@@ -4,7 +4,7 @@
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
-part of 'data.dart';
+part of 'events.dart';
 
 class EventsMapper extends ClassMapperBase<Events> {
   EventsMapper._();
@@ -120,7 +120,7 @@ class EventMapper extends ClassMapperBase<Event> {
   @override
   final String id = 'Event';
 
-  static String _$speaker(Event v) => v.speaker;
+  static String? _$speaker(Event v) => v.speaker;
   static const Field<Event, String> _f$speaker = Field('speaker', _$speaker);
   static String _$description(Event v) => v.description;
   static const Field<Event, String> _f$description =
@@ -129,6 +129,9 @@ class EventMapper extends ClassMapperBase<Event> {
   static const Field<Event, String> _f$title = Field('title', _$title);
   static DateTime _$time(Event v) => v.time;
   static const Field<Event, DateTime> _f$time = Field('time', _$time);
+  static int _$typeId(Event v) => v.typeId;
+  static const Field<Event, int> _f$typeId =
+      Field('typeId', _$typeId, key: 'type_id');
 
   @override
   final MappableFields<Event> fields = const {
@@ -136,6 +139,7 @@ class EventMapper extends ClassMapperBase<Event> {
     #description: _f$description,
     #title: _f$title,
     #time: _f$time,
+    #typeId: _f$typeId,
   };
 
   static Event _instantiate(DecodingData data) {
@@ -143,7 +147,8 @@ class EventMapper extends ClassMapperBase<Event> {
         speaker: data.dec(_f$speaker),
         description: data.dec(_f$description),
         title: data.dec(_f$title),
-        time: data.dec(_f$time));
+        time: data.dec(_f$time),
+        typeId: data.dec(_f$typeId));
   }
 
   @override
@@ -193,7 +198,11 @@ extension EventValueCopy<$R, $Out> on ObjectCopyWith<$R, Event, $Out> {
 abstract class EventCopyWith<$R, $In extends Event, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call(
-      {String? speaker, String? description, String? title, DateTime? time});
+      {String? speaker,
+      String? description,
+      String? title,
+      DateTime? time,
+      int? typeId});
   EventCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -205,22 +214,25 @@ class _EventCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Event, $Out>
   late final ClassMapperBase<Event> $mapper = EventMapper.ensureInitialized();
   @override
   $R call(
-          {String? speaker,
+          {Object? speaker = $none,
           String? description,
           String? title,
-          DateTime? time}) =>
+          DateTime? time,
+          int? typeId}) =>
       $apply(FieldCopyWithData({
-        if (speaker != null) #speaker: speaker,
+        if (speaker != $none) #speaker: speaker,
         if (description != null) #description: description,
         if (title != null) #title: title,
-        if (time != null) #time: time
+        if (time != null) #time: time,
+        if (typeId != null) #typeId: typeId
       }));
   @override
   Event $make(CopyWithData data) => Event(
       speaker: data.get(#speaker, or: $value.speaker),
       description: data.get(#description, or: $value.description),
       title: data.get(#title, or: $value.title),
-      time: data.get(#time, or: $value.time));
+      time: data.get(#time, or: $value.time),
+      typeId: data.get(#typeId, or: $value.typeId));
 
   @override
   EventCopyWith<$R2, Event, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
